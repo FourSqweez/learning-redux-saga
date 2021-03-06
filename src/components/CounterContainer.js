@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { ADD_REQ, INCREMENT_REQ } from '../redux/counters/counterTypes'
-// import { onDecrement, onIncrement, onAdd, onIncrementAsync } from '../redux'
+import {
+  ADD_REQ,
+  INCREMENT_ASYNC_REQ,
+  INCREMENT_REQ,
+} from '../redux/counters/counterTypes'
 import { DECREMENT_REQ } from './../redux/counters/counterTypes'
 
 export default function CounterContainer() {
@@ -10,9 +13,9 @@ export default function CounterContainer() {
 
   return (
     <>
-      {/* <button onClick={() => dispatch(onIncrementAsync())}>
+      <button onClick={() => action(INCREMENT_ASYNC_REQ)}>
         Increment after 1 second
-      </button> */}
+      </button>
       <button onClick={() => action(INCREMENT_REQ)}>Increment</button>
       <button onClick={() => action(DECREMENT_REQ)}>Decrement</button>
       <button onClick={() => action(ADD_REQ, 10)}>Add</button>
